@@ -34,7 +34,7 @@ const Cart: React.FC<Props> = ({ items, onClose, onUpdateQty, onRemove }) => {
     <div className="fixed inset-0 z-50 flex justify-end bg-black/40 backdrop-blur-sm">
       <div className="bg-white w-full sm:w-[400px] h-full flex flex-col rounded-l-2xl shadow-xl overflow-hidden animate-slideIn">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#ff7d50] to-[#d72b3f] text-white px-5 py-4 flex justify-between items-center">
+        <div className="bg-gradient-to-r  from-[#8a1f44] to-[#c92a55] text-white px-5 py-4 flex justify-between items-center">
           <h2 className="text-lg font-semibold">Your Cart</h2>
           <button onClick={onClose} className="hover:opacity-80 transition">
             <X size={22} />

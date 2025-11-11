@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import { type Product } from "./data/type-products";
 import type { CartItem } from "./types/cart";
 import ScrollToTop from "./components/ScrollToTop";
+import Contact from "./components/Contact";
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -50,6 +51,7 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage onAdd={addToCart} />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/product/:id" element={<ProductDetail onAdd={addToCart} />} />
+            <Route path="/contact" element={<Contact/>} />
           </Routes>
         </main>
 

@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
   const links = [
     { name: "Home", href: "#home" },
     { name: "Products", href: "#products" },
-    { name: "blog", href: "#blog" },
+    { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ];
 
