@@ -35,25 +35,26 @@ const ProductDetail: React.FC<Props> = ({ onAdd }) => {
           {/* Thumbnails */}
         {/* Thumbnails */}
 <div className="flex flex-col items-center mt-4">
-  <div className="flex gap-3 overflow-x-auto pb-2">
-    {product.images.map((src, i) => (
-      <button
-        key={i}
-        onClick={() => setIdx(i)}
-        className={`w-20 h-16 border-2 rounded-lg overflow-hidden flex-shrink-0 transition ${
-          i === idx
-            ? "border-orange-500 ring-2 ring-orange-300"
-            : "border-gray-200 hover:border-orange-400"
-        }`}
-      >
-        <img
-          src={src}
-          alt={product.title}
-          className="w-full h-full object-cover"
-        />
-      </button>
-    ))}
-  </div>
+ <div className="flex gap-3 overflow-x-auto pb-2 pl-2 pr-2 scroll-smooth">
+  {product.images.map((src, i) => (
+    <button
+      key={i}
+      onClick={() => setIdx(i)}
+      className={`w-20 h-16 border-2 rounded-lg overflow-hidden flex-shrink-0 transition ${
+        i === idx
+          ? "border-orange-500 ring-2 ring-orange-300"
+          : "border-gray-200 hover:border-orange-400"
+      }`}
+    >
+      <img
+        src={src}
+        alt={product.title}
+        className="w-full h-full object-cover"
+      />
+    </button>
+  ))}
+</div>
+
 
   {/* Line indicators */}
   <div className="flex justify-center items-center gap-2 mt-3">
