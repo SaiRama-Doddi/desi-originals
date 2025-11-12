@@ -32,7 +32,7 @@ const Home: React.FC = () => {
         {carouselImages.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
+            className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
               index === current
                 ? "opacity-100 scale-105 brightness-110 blur-[3px]"
                 : "opacity-0 scale-100 brightness-90 blur-sm"
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         ))}
 
         {/* Light overlay glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fff3e5]/10 via-[#fff3e5]/10 to-black/20"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-[#fff3e5]/10 via-[#fff3e5]/10 to-black/20"></div>
       </div>
 
       {/* Foreground content */}

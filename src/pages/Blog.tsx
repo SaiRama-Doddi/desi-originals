@@ -43,7 +43,7 @@ const items: Item[] = [
     title: "Desi Brown Eggs",
     description:
       "Our Desi Brown Eggs come from hens raised on a nutritious diet, providing fresh and flavorful eggs perfect for any meal.",
-    pricePrimary: "₹399/30 Piece",
+    pricePrimary: "₹360/30 Piece",
     priceSecondary: "₹199/12 Piece",
     imageSrc: "/4.png",
   },

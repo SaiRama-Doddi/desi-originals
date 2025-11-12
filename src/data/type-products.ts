@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
     id: "eggs-02",
     title: "Desi Brown Eggs - Pack of 30",
     category: "eggs",
-    price: 399,
+    price: 360,
     description:
       "Bulk pack of 30 desi brown eggs — perfect for families, bakeries, or meal prep lovers.",
     highlights: ["High protein", "Farm fresh", "Rich yellow yolks"],
