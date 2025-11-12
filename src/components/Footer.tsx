@@ -7,7 +7,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="text-3xl">🌶️</div>
+              <div className="text-3xl">   <img
+            src="/logo.jpg"
+            alt="Desi Originals Logo"
+            className="w-10 h-10 rounded-full "
+          /></div>
               <h3 className="text-xl font-bold text-white">Desi Originals</h3>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -39,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-orange-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Mumbai, Maharashtra, India</span>
+                <span className="text-sm">Yenakapalli, Ranga Reddy, Telangana 501504</span>
               </li>
             </ul>
           </div>

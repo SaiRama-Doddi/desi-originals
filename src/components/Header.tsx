@@ -8,6 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home"); // Track active link
 
   const links = [
     { name: "Home", href: "#home" },
@@ -16,18 +17,23 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleLinkClick = (name: string) => {
+    setActiveLink(name);
+    setMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 shadow-md bg-gradient-to-r from-[#601c32] via-[#8a1f44] to-[#c92a55] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         {/* Brand Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="/logo.jpg"
+            src="/logo2.png"
             alt="Desi Originals Logo"
-            className="w-10 h-10 rounded-full border border-white"
+            className="w-15 h-15 rounded-full "
           />
-          <h1 className="text-2xl font-extrabold tracking-wide">
-            Desi <span className="text-yellow-300">Originals</span>
+          <h1 className="text-2xl font-semibold tracking-wide text-[#fff3e5] uppercase">
+            Desi <span className="text-[#fff3e5]">Originals</span>
           </h1>
         </div>
 
@@ -37,11 +43,17 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-lg font-medium hover:text-yellow-300 transition-colors"
+              onClick={() => handleLinkClick(link.name)}
+              className={`text-lg font-medium transition-colors ${
+                activeLink === link.name
+                  ? "text-yellow-300 border-b-2 border-yellow-300 pb-1"
+                  : "hover:text-yellow-300"
+              }`}
             >
               {link.name}
             </a>
           ))}
+
           {/* Cart Button */}
           <button
             onClick={onCartClick}
@@ -88,8 +100,12 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="block text-lg font-medium hover:text-yellow-600 transition"
+              onClick={() => handleLinkClick(link.name)}
+              className={`block text-lg font-medium transition ${
+                activeLink === link.name
+                  ? "text-[#c92a55] font-semibold"
+                  : "hover:text-[#c92a55]"
+              }`}
             >
               {link.name}
             </a>

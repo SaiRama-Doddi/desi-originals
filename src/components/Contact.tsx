@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
             <MapPin className="text-orange-500" size={28} />
             <div>
               <p className="font-semibold text-gray-700">Address</p>
-              <p className="text-gray-500">Hyderabad, Telangana, India</p>
+              <p className="text-gray-500">Yenakapalli, Ranga Reddy, Telangana 501504</p>
             </div>
           </div>
         </div>
