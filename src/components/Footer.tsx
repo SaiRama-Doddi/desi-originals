@@ -31,11 +31,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2">
                 <Phone className="h-5 w-5 text-orange-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">+91 98765 43210</span>
+                <span className="text-sm">+91 63000 88675</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-5 w-5 text-orange-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">hello@desioriginals.com</span>
+                <span className="text-sm">desioriginals1997@gmail.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-orange-400 flex-shrink-0 mt-0.5" />
