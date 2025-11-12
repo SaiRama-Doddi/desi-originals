@@ -2,7 +2,7 @@ import { Award, Users, Target, Heart } from 'lucide-react';
 
 export function About() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-[#fbebd5] py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-800 mb-4">About Desi Originals</h1>
@@ -12,7 +12,7 @@ export function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="rounded-2xl p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Desi Originals was born from a simple belief that everyone deserves access to fresh,
@@ -26,7 +26,7 @@ export function About() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="rounded-2xl p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We are committed to providing our customers with the freshest, highest-quality products
@@ -66,7 +66,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-12 shadow-lg">
+        <div className=" p-12 ">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Values</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">

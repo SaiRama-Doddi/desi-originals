@@ -1,111 +1,143 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-interface Article {
-  id: string
-  title: string
-  excerpt: string
-  image: string
-  content: string
-}
+type Item = {
+  id: string;
+  title: string;
+  description: string;
+  pricePrimary: string;
+  priceSecondary?: string;
+  imageSrc: string;
+  badge?: string;
+};
 
-const ARTICLES: Article[] = [
+const items: Item[] = [
   {
-    id: 'b1',
-    title: 'Why Free-range Eggs are Better',
-    excerpt: 'A brief on nutrition and farming practices.',
-    image: 'http://wovenmeadows.com/wordpress/wp-content/uploads/2012/10/Valdale-Farm-Eggs-1005.jpg',
-    content:
-      'Free-range eggs come from hens that have space to roam and forage outdoors. They contain more vitamins A, D, and E, as well as omega-3 fatty acids. Supporting ethical farming also means better animal welfare and sustainability. These eggs often have richer yolk color, improved taste, and higher protein quality compared to caged alternatives.'
+    id: "desi-chicken",
+    title: "Naatu Kodi (Desi Chicken)",
+    description:
+      "Our Naatu Kodi is raised in a natural environment, ensuring tender and flavorful meat, perfect for traditional recipes.",
+    pricePrimary: "₹699/kg",
+    imageSrc: "/1.png",
   },
   {
-    id: 'b2',
-    title: 'Choosing Fresh Meat for Your Kitchen',
-    excerpt: 'Tips to select and store meat safely.',
-    image: 'https://www.mashed.com/img/gallery/ranking-cuts-of-pork-to-slow-cook-from-worst-to-best/l-intro-1657905663.jpg',
-    content:
-      'Always look for bright red meat with a firm texture and minimal moisture. Avoid meat with gray patches or sour smells. Store meat below 4°C and cook it within 24 hours of purchase. Opt for locally sourced meat for freshness and traceability — it’s not just healthier but supports your local farmers too.'
+    id: "desi-broiler",
+    title: "Desi Broiler Chicken",
+    description:
+      "Our Desi Broiler Chicken offers a juicy and tender option, ideal for various culinary delights.",
+    pricePrimary: "₹400/kg",
+    priceSecondary: "₹650/kg Boneless",
+    imageSrc: "/2.png",
   },
   {
-    id: 'b3',
-    title: 'Sustainable Fishing Practices',
-    excerpt: 'How to be an informed seafood buyer.',
-    image: 'https://images.unsplash.com/photo-1555992336-cbf8e5b09a9e?auto=format&fit=crop&w=800&q=80',
-    content:
-      'Overfishing harms marine ecosystems. Choose seafood certified by sustainability organizations like MSC. Buy fish caught through traditional methods and avoid endangered species. By supporting sustainable practices, you help preserve biodiversity and ensure long-term availability of your favorite seafood.'
-  }
-]
+    id: "desi-mutton",
+    title: "Desi Mutton",
+    description:
+      "Our Desi Mutton is sourced from free-range goats, offering a rich and authentic taste that embodies the essence of Telangana cuisine.",
+    pricePrimary: "₹1099/kg",
+    priceSecondary: "₹1299/kg Boneless",
+    imageSrc: "/3.png",
+    badge: "Hot",
+  },
+  {
+    id: "desi-eggs",
+    title: "Desi Brown Eggs",
+    description:
+      "Our Desi Brown Eggs come from hens raised on a nutritious diet, providing fresh and flavorful eggs perfect for any meal.",
+    pricePrimary: "₹399/30 Piece",
+    priceSecondary: "₹199/12 Piece",
+    imageSrc: "/4.png",
+  },
+];
 
 const Blog: React.FC = () => {
-  const [selected, setSelected] = useState<Article | null>(null)
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   return (
-    <section id="blog" className="bg-[#fbebd5] py-16 px-6">
+    <section className="min-h-screen bg-[#fbebd] py-12 px-6 sm:px-10" id="blog">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-[#901f3b] mb-10 text-center">
-          Our Blog
-        </h2>
+        {/* Page title */}
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mt-5 mb-2 text-gray-800">
+          Desi Originals
+        </h1>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {ARTICLES.map((a) => (
-            <article
-              key={a.id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1"
-            >
-              <div className="h-48 w-full overflow-hidden">
-                <img
-                  src={a.image}
-                  alt={a.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-[#814142]">
-                  {a.title}
-                </h3>
-                <p className="text-sm text-[#3a2d18]/80 mt-2">{a.excerpt}</p>
-                <button
-                  onClick={() => setSelected(a)}
-                  className="mt-4 text-[#fbebd5] bg-[#901f3b] px-4 py-2 rounded-md hover:bg-[#814142] transition text-sm"
-                >
-                  Read More
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+      {/* Subtitle */}
+<p className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+  Experience the authentic taste of farm-fresh quality.  
+  Handpicked with care, nurtured with tradition, and delivered with trust.
+</p>
 
-      {/* Blog Modal */}
-      {selected && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl animate-fadeIn">
-            <div className="relative">
-              <img
-                src={selected.image}
-                alt={selected.title}
-                className="w-full h-64 object-cover"
-              />
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-3 right-3 bg-[#901f3b] text-[#fbebd5] rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#814142] transition"
+{/* Decorative divider */}
+<div className="flex justify-center mb-12">
+  <div className="w-44 h-1 bg-[#814142] rounded-full"></div>
+</div>
+        {/* Blog Cards Grid */}
+        {!selectedItem ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {items.map((item) => (
+              <article
+                key={item.id}
+                onClick={() => setSelectedItem(item)}
+                className="bg-white rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300"
               >
-                ✕
-              </button>
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-[#901f3b]">
-                {selected.title}
-              </h3>
-              <p className="mt-3 text-[#3a2d18]/90 leading-relaxed">
-                {selected.content}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
-  )
-}
+                <div className="relative">
+                  <img
+                    src={item.imageSrc}
+                    alt={item.title}
+                    className="w-full h-56 object-cover"
+                  />
+                  {item.badge && (
+                    <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      {item.badge}
+                    </span>
+                  )}
+                </div>
 
-export default Blog
+                <div className="p-5">
+                  <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                    {item.title}
+                  </h2>
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {item.description}
+                  </p>
+                  <div className="mt-4 text-indigo-600 font-semibold">
+                    {item.pricePrimary}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          // Single Blog Detail View
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md p-8 transition-all duration-300">
+            <button
+              onClick={() => setSelectedItem(null)}
+              className="mb-4 text-indigo-600 hover:underline"
+            >
+              ← Back to all
+            </button>
+
+            <img
+              src={selectedItem.imageSrc}
+              alt={selectedItem.title}
+              className="w-full h-72 object-cover rounded-xl mb-6"
+            />
+            <h2 className="text-2xl font-bold mb-3 text-gray-800">
+              {selectedItem.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              {selectedItem.description}
+            </p>
+            <div className="text-lg font-semibold text-indigo-600 mb-2">
+              {selectedItem.pricePrimary}
+            </div>
+            {selectedItem.priceSecondary && (
+              <div className="text-gray-600">{selectedItem.priceSecondary}</div>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Blog;

@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gradient-to-b from-red-500 to-orange-500 px-4 py-3 space-y-3">
+        <div className="md:hidden bg-white px-4 py-3 space-y-3">
           {links.map((link) => (
             <a
               key={link.name}

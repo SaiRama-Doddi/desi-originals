@@ -20,7 +20,7 @@ const Products: React.FC<Props> = ({ onAdd }) => {
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {["all", "eggs", "meat", "fish"].map((cat) => (
+          {["all", "eggs", "chicken","mutton"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat as any)}

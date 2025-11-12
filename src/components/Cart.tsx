@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { CartItem } from "../types/cart";
 import { PHONE_NUMBER } from "../config";
 import { X, Trash2 } from "lucide-react";
@@ -10,12 +10,33 @@ type Props = {
   onRemove: (id: string) => void;
 };
 
+type CustomerInfo = {
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+};
+
 const Cart: React.FC<Props> = ({ items, onClose, onUpdateQty, onRemove }) => {
+  const [showCustomerForm, setShowCustomerForm] = useState(false);
+  const [customer, setCustomer] = useState<CustomerInfo>({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+  });
+
   const total = items.reduce((s, it) => s + it.product.price * it.qty, 0);
 
   const buildMessage = () => {
     const lines: string[] = [];
     lines.push("🛍️ *Order from Desi Originals*");
+    lines.push("");
+    lines.push(`*Customer Info:*`);
+    lines.push(`Name: ${customer.name}`);
+    lines.push(`Phone: ${customer.phone}`);
+    lines.push(`Email: ${customer.email}`);
+    lines.push(`Address: ${customer.address}`);
     lines.push("");
     items.forEach((it) =>
       lines.push(`${it.qty} x ${it.product.title} - ₹${it.product.price * it.qty}`)
@@ -30,11 +51,19 @@ const Cart: React.FC<Props> = ({ items, onClose, onUpdateQty, onRemove }) => {
     window.open(url, "_blank");
   };
 
+  const handleCustomerSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Check that all fields are filled
+    if (!customer.name || !customer.phone || !customer.email || !customer.address) return;
+    setShowCustomerForm(false);
+    sendWhatsapp();
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-black/40 backdrop-blur-sm">
       <div className="bg-white w-full sm:w-[400px] h-full flex flex-col rounded-l-2xl shadow-xl overflow-hidden animate-slideIn">
         {/* Header */}
-        <div className="bg-gradient-to-r  from-[#8a1f44] to-[#c92a55] text-white px-5 py-4 flex justify-between items-center">
+        <div className="bg-gradient-to-r from-[#8a1f44] to-[#c92a55] text-white px-5 py-4 flex justify-between items-center">
           <h2 className="text-lg font-semibold">Your Cart</h2>
           <button onClick={onClose} className="hover:opacity-80 transition">
             <X size={22} />
@@ -59,9 +88,7 @@ const Cart: React.FC<Props> = ({ items, onClose, onUpdateQty, onRemove }) => {
                   className="w-16 h-16 object-cover rounded-lg"
                 />
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800">
-                    {it.product.title}
-                  </h4>
+                  <h4 className="font-semibold text-gray-800">{it.product.title}</h4>
                   <p className="text-sm text-[#d72b3f] font-medium">
                     ₹{it.product.price} / dozen
                   </p>
@@ -101,19 +128,72 @@ const Cart: React.FC<Props> = ({ items, onClose, onUpdateQty, onRemove }) => {
               <span className="text-[#d72b3f]">₹{total.toFixed(2)}</span>
             </div>
             <button
-              onClick={sendWhatsapp}
+              onClick={() => setShowCustomerForm(true)}
               className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                className="w-5 h-5"
-                viewBox="0 0 16 16"
-              >
-                <path d="M13.601 2.326A7.93 7.93 0 008.002.082a7.93 7.93 0 00-5.6 2.244 7.902 7.902 0 00-2.3 5.58 7.902 7.902 0 001.104 4.015L.667 15.66l3.834-1.006a7.933 7.933 0 003.497.877h.003a7.908 7.908 0 005.58-2.3 7.931 7.931 0 002.323-5.59 7.9 7.9 0 00-2.303-5.315zM8.003 14.07a6.013 6.013 0 01-3.075-.84l-.22-.13-2.27.596.607-2.212-.143-.227a6.063 6.063 0 01-.94-3.26 6.073 6.073 0 011.786-4.302 6.063 6.063 0 014.306-1.785 6.06 6.06 0 014.305 1.786 6.063 6.063 0 011.787 4.304 6.07 6.07 0 01-1.786 4.304 6.073 6.073 0 01-4.304 1.786zm3.422-4.53c-.188-.094-1.11-.547-1.282-.61-.172-.063-.297-.094-.421.094-.125.187-.484.61-.594.735-.109.125-.219.141-.406.047-.188-.094-.79-.29-1.506-.924a5.63 5.63 0 01-1.04-1.29c-.109-.188-.012-.29.082-.384.085-.085.188-.219.281-.328.094-.11.125-.188.188-.313.063-.125.032-.235-.016-.329-.047-.094-.421-1.016-.578-1.39-.152-.36-.305-.313-.421-.313h-.36a.7.7 0 00-.515.235c-.172.187-.672.656-.672 1.6s.688 1.855.782 1.985c.094.125 1.344 2.05 3.26 2.875.456.197.812.313 1.09.4.457.146.875.125 1.203.075.367-.055 1.11-.453 1.266-.89.156-.437.156-.812.11-.89-.047-.078-.172-.125-.36-.219z" />
-              </svg>
               Proceed to WhatsApp Order
             </button>
+          </div>
+        )}
+
+        {/* Customer Info Modal */}
+        {showCustomerForm && (
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
+            <form
+              onSubmit={handleCustomerSubmit}
+              className="bg-white p-6 rounded-xl w-full max-w-md flex flex-col gap-4 shadow-lg"
+            >
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
+                Enter Your Details
+              </h3>
+              <input
+                type="text"
+                placeholder="Name"
+                value={customer.name}
+                onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
+                className="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                value={customer.phone}
+                onChange={(e) => setCustomer({ ...customer, phone: e.target.value })}
+                className="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={customer.email}
+                onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
+                className="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                required
+              />
+              <textarea
+                placeholder="Address"
+                value={customer.address}
+                onChange={(e) => setCustomer({ ...customer, address: e.target.value })}
+                className="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-green-400 outline-none resize-none"
+                rows={3}
+                required
+              />
+              <div className="flex justify-end gap-3 mt-2">
+                <button
+                  type="button"
+                  onClick={() => setShowCustomerForm(false)}
+                  className="px-4 py-2 rounded-lg border hover:bg-gray-100 transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition"
+                >
+                  Proceed
+                </button>
+              </div>
+            </form>
           </div>
         )}
       </div>
