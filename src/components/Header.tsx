@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
         {/* Brand Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Desi Originals Logo"
             className="w-10 h-10 rounded-full border border-white"
           />

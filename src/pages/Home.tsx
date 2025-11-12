@@ -31,12 +31,12 @@ const Home: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Left Section */}
         <div className="flex-1 text-center md:text-left space-y-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-snug text-[#901f3b]">
-            Desi Originals — <br className="hidden md:block" />
-            <span className="text-[#814142]">Fresh from Our Farms</span>
+          <h1 className="text-3xl md:text-4xl font-extrabold leading-snug text-[#901f3b]">
+            Brininging Farm Fresh  <br className="hidden md:block" />
+            <span className="text-[#814142]">Goodness to Your Doorstep</span>
           </h1>
 
-          <p className="text-lg text-gray-700 leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-md text-gray-700 leading-relaxed max-w-xl mx-auto md:mx-0">
             Experience the true taste of freshness. We bring you premium{" "}
             <span className="font-semibold text-[#901f3b]">
               eggs, meat, and fish
