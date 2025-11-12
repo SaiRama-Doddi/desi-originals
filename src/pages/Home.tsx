@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ShoppingBag, BookOpen } from "lucide-react";
+import {  ShoppingBag, BookOpen } from "lucide-react";
 
 const carouselImages = [
   "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=1600&q=80",
-  "https://static.vecteezy.com/system/resources/previews/034/763/882/original/ai-generated-raw-chicken-meat-free-png.png",
+  "https://png.pngtree.com/background/20230519/original/pngtree-six-chickens-walking-in-the-fall-picture-image_2661901.jpg",
   "https://www.tastingtable.com/img/gallery/the-best-cuts-of-chicken-ranked/l-intro-1659739353.jpg",
 ];
 
@@ -18,12 +18,12 @@ const Home: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const prevSlide = () =>
+/*   const prevSlide = () =>
     setCurrent((prev) =>
       prev === 0 ? carouselImages.length - 1 : prev - 1
     );
   const nextSlide = () =>
-    setCurrent((prev) => (prev + 1) % carouselImages.length);
+    setCurrent((prev) => (prev + 1) % carouselImages.length); */
 
   return (
     <section id="home" className="relative w-full h-[90vh] overflow-hidden">
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button
+{/*       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-[#901f3b]/80 transition"
       >
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-[#901f3b]/80 transition"
       >
         <ChevronRight />
-      </button>
+      </button> */}
 
       {/* Dots Indicator */}
       <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-30">
