@@ -3,9 +3,9 @@ import { Truck, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { ShoppingBag, BookOpen } from "lucide-react";
 
 const carouselImages = [
-  "https://images.unsplash.com/photo-1606813902958-b94d7796c1c7?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1619710077075-56d63c7eec46?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1598514982834-bbf3e3f36f53?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=1600&q=80",
+  "https://static.vecteezy.com/system/resources/previews/034/763/882/original/ai-generated-raw-chicken-meat-free-png.png",
+  "https://www.tastingtable.com/img/gallery/the-best-cuts-of-chicken-ranked/l-intro-1659739353.jpg",
 ];
 
 const Home: React.FC = () => {
