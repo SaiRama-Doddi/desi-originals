@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, type JSX } from "react";
+import  { useRef, useState, useEffect, type JSX } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Testimonial = {
