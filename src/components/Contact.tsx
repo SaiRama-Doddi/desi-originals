@@ -42,10 +42,16 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbebd5] flex flex-col items-center py-16 px-4 mt-2" id="contact">
-      <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+    <div className="min-h-screen bg-[#fbebd5] flex flex-col items-center py-10 px-4 mt-4" id="contact">
+
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-5 text-center">
         Get in Touch
-      </h2>
+      </h1>
+      {/* Decorative divider */}
+<div className="flex justify-center mb-12">
+  <div className="w-44 h-1 bg-[#814142] rounded-full"></div>
+</div>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl w-full">
         {/* Contact Info */}

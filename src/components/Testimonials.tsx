@@ -93,7 +93,7 @@ export default function Testimonials(): JSX.Element {
 
   return (
     <section className="relative py-8 px-4 sm:px-8 lg:px-16">
-      <h2 className="text-2xl font-semibold mb-4">What people say</h2>
+      <h2 className="text-4xl font-semibold mb-4 text-[#901f3b]">What people say</h2>
 
       {/* Horizontal scroller */}
       <div className="relative">
@@ -106,7 +106,7 @@ export default function Testimonials(): JSX.Element {
           {testimonials.map((t) => (
             <article
               key={t.id}
-              className="snap-start flex-shrink-0 w-[86%] sm:w-[45%] md:w-[34%] lg:w-[28%] bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-md"
+              className="p-10 snap-start flex-shrink-0 w-[86%] sm:w-[45%] md:w-[34%] lg:w-[28%] bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-md"
               role="group"
               aria-roledescription="slide"
             >

@@ -91,9 +91,9 @@ export const PRODUCTS: Product[] = [
       "Freshly sourced Desi Broiler Chicken — tender meat with balanced flavor, ideal for everyday dishes.",
     highlights: ["Juicy cuts", "Farm fresh", "Cleaned and packed"],
     images: [
-      "https://ghbasket.com/wp-content/uploads/2022/09/Chicken-thigh.jpeg",
-      "https://images.deliveryhero.io/image/darkstores-bd/perishable/7530001.jpg?height=480",
-      "https://www.tokopoint.com/cdn/shop/products/6f4b89a4c5714d9d_ed6ee045-fd47-4f7e-a508-791e0735f87d.jpg?v=1686160320"
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134505/broiler-1_g1hwmn.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134505/broiler-2_xstwud.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134506/broiler-3_wej6sf.jpg"
     ],
   },
   {

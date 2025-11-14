@@ -15,9 +15,9 @@ const Products: React.FC<Props> = ({ onAdd }) => {
   return (
     <section className="bg-[#fbebd5] py-20 px-4 flex justify-center items-center" id="products">
       <div className="max-w-6xl w-full text-center">
-        <h2 className="text-4xl font-extrabold text-[#901f3b] mb-10">
+  <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-5 text-center">
           Our Fresh Products
-        </h2>
+        </h1>
 
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {["all", "eggs", "chicken","mutton"].map((cat) => (

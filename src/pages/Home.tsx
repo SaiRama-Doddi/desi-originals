@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import {  ShoppingBag, BookOpen } from "lucide-react";
 
 const carouselImages = [
-  "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=1600&q=80",
-  "https://png.pngtree.com/background/20230519/original/pngtree-six-chickens-walking-in-the-fall-picture-image_2661901.jpg",
-  "https://www.tastingtable.com/img/gallery/the-best-cuts-of-chicken-ranked/l-intro-1659739353.jpg",
+  "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763135975/hero1_t33vzh.avif",
+  "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763135975/hero2_u4u9cr.png",
+  "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763135977/hero3_uvdmml.jpg",
 ];
 
 const Home: React.FC = () => {

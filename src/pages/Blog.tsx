@@ -26,7 +26,7 @@ const items: Item[] = [
       "Our Desi Broiler Chicken offers a juicy and tender option, ideal for various culinary delights.",
     pricePrimary: "₹400/kg",
     priceSecondary: "₹650/kg Boneless",
-    imageSrc: "/2.png",
+    imageSrc: "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134505/broiler-2_xstwud.jpg",
   },
   {
     id: "desi-mutton",
@@ -35,7 +35,7 @@ const items: Item[] = [
       "Our Desi Mutton is sourced from free-range goats, offering a rich and authentic taste that embodies the essence of Telangana cuisine.",
     pricePrimary: "₹1099/kg",
     priceSecondary: "₹1299/kg Boneless",
-    imageSrc: "/3.png",
+    imageSrc: "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/mutton-boneless3_dfw9xw.jpg",
     badge: "Hot",
   },
   {
@@ -56,7 +56,7 @@ const Blog: React.FC = () => {
     <section className="min-h-screen bg-[#fbebd] py-12 px-6 sm:px-10" id="blog">
       <div className="max-w-6xl mx-auto">
         {/* Page title */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-center mt-5 mb-2 text-gray-800">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-5 text-center">
           Desi Originals
         </h1>
 

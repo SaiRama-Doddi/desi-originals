@@ -5,3 +5,8 @@ html, body, #root { height: 100%; }
 
 /* small utility for product images */
 .img-cover { object-fit: cover; }
+
+
+html {
+  scroll-padding-top: 80px; /* or match your header height */
+}

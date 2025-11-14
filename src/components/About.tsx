@@ -1,103 +1,102 @@
-import { Award, Users, Target, Heart } from 'lucide-react';
+import { Award, Users, Target, Heart } from "lucide-react";
 
 export function About() {
   return (
-    <div className="min-h-screen bg-[#fbebd5] py-12">
+    <div className="min-h-screen bg-[#fbebd5] py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">About Desi Originals</h1>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Bringing farm-fresh quality and authentic flavors to your table since 2020
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-4">
+            About Desi Originals
+          </h1>
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+            Bringing farm-fresh quality and authentic flavors to your table since 2020.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="rounded-2xl p-8 shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Desi Originals was born from a simple belief that everyone deserves access to fresh,
-              high-quality food. We started with a small network of local farms and have grown into
-              a trusted name for premium eggs, meat, and seafood.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Today, we work with dozens of partner farms and fisheries, ensuring that every product
-              meets our strict standards for quality, freshness, and sustainability. Our commitment
-              to excellence has earned us the trust of thousands of families across the region.
-            </p>
-          </div>
-
-          <div className="rounded-2xl p-8 shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              We are committed to providing our customers with the freshest, highest-quality products
-              while supporting local farmers and sustainable practices. Every product we offer is
-              carefully sourced and inspected to ensure it meets our exacting standards.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              We believe in transparency, quality, and building long-term relationships with both
-              our suppliers and customers. Your health and satisfaction are our top priorities.
-            </p>
-          </div>
+        {/* Story + Mission */}
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+          {[ 
+            {
+              title: "Our Story",
+              text1:
+                "Desi Originals was born from a simple belief that everyone deserves access to fresh, high-quality food. What began with a small network of local farms has grown into a trusted name for premium eggs, meat, and seafood.",
+              text2:
+                "Today, we proudly work with dozens of partner farms and fisheries, ensuring each product meets strict quality, freshness, and sustainability standards."
+            },
+            {
+              title: "Our Mission",
+              text1:
+                "We are committed to providing the freshest, highest-quality products while supporting local farmers and promoting sustainable practices.",
+              text2:
+                "Transparency, quality, and long-term relationships lie at the heart of everything we do. Your health and satisfaction always come first."
+            }
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white/90 rounded-2xl p-10 shadow-xl border border-orange-100 hover:shadow-2xl transition-all"
+            >
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">{item.title}</h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">{item.text1}</p>
+              <p className="text-gray-600 leading-relaxed">{item.text2}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-8 rounded-2xl text-center transform hover:scale-105 transition-transform">
-            <Award className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold mb-2">100+</h3>
-            <p className="text-orange-100">Partner Farms</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-8 rounded-2xl text-center transform hover:scale-105 transition-transform">
-            <Users className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold mb-2">5000+</h3>
-            <p className="text-orange-100">Happy Customers</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-8 rounded-2xl text-center transform hover:scale-105 transition-transform">
-            <Target className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold mb-2">99%</h3>
-            <p className="text-orange-100">Quality Score</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-8 rounded-2xl text-center transform hover:scale-105 transition-transform">
-            <Heart className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold mb-2">4+ Years</h3>
-            <p className="text-orange-100">Of Excellence</p>
-          </div>
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {[
+            { icon: Award, value: "100+", label: "Partner Farms" },
+            { icon: Users, value: "5000+", label: "Happy Customers" },
+            { icon: Target, value: "99%", label: "Quality Score" },
+            { icon: Heart, value: "4+ Years", label: "Of Excellence" }
+          ].map((stat, idx) => (
+            <div
+              key={idx}
+              className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-10 rounded-2xl text-center shadow-xl hover:scale-105 transition-transform"
+            >
+              <stat.icon className="w-12 h-12 mx-auto mb-4" />
+              <h3 className="text-4xl font-extrabold mb-2">{stat.value}</h3>
+              <p className="text-orange-100 text-lg">{stat.label}</p>
+            </div>
+          ))}
         </div>
 
-        <div className=" p-12 ">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Quality First</h3>
-              <p className="text-gray-600">
-                We never compromise on quality. Every product is carefully selected and inspected.
-              </p>
-            </div>
+        {/* Values */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
+            Our Values
+          </h2>
 
-            <div className="text-center">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-orange-600" />
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                icon: Award,
+                title: "Quality First",
+                desc: "We never compromise on quality. Every product is carefully selected and inspected."
+              },
+              {
+                icon: Heart,
+                title: "Customer Care",
+                desc: "Your satisfaction is our priority. We serve you with dedication and honesty."
+              },
+              {
+                icon: Target,
+                title: "Sustainability",
+                desc: "We support eco-friendly farming and responsible sourcing."
+              }
+            ].map((value, idx) => (
+              <div
+                key={idx}
+                className="bg-white/90 p-10 rounded-2xl shadow-md border border-orange-100 hover:shadow-xl transition-all text-center"
+              >
+                <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5">
+                  <value.icon className="w-10 h-10 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Customer Care</h3>
-              <p className="text-gray-600">
-                Your satisfaction is our priority. We're here to serve you with dedication.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Sustainability</h3>
-              <p className="text-gray-600">
-                We support sustainable farming practices and local communities.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
