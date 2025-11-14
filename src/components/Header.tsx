@@ -73,21 +73,29 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
         </nav>
 
         {/* MOBILE ICONS */}
-        <div className="md:hidden flex items-center gap-4">
-          <button
-            onClick={onCartClick}
-            className="relative p-2 bg-white/20 hover:bg-white/30 rounded-full transition"
-          >
-            <ShoppingCart className="w-6 h-6" />
-          </button>
+       <div className="md:hidden flex items-center gap-4">
+  {/* Cart button */}
+  <button
+    onClick={onCartClick}
+    className="relative p-2 bg-white/20 hover:bg-white/30 rounded-full transition"
+  >
+    <ShoppingCart className="w-6 h-6" />
+    {cartCount > 0 && (
+      <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold">
+        {cartCount}
+      </span>
+    )}
+  </button>
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-md hover:bg-white/20"
-          >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+  {/* Hamburger menu */}
+  <button
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="p-2 rounded-md hover:bg-white/20"
+  >
+    {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+  </button>
+</div>
+
       </div>
 
       {/* MOBILE MENU (Drops Below Header) */}
