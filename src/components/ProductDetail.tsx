@@ -32,7 +32,7 @@ const ProductDetail: React.FC<Props> = ({ onAdd }) => {
             className="w-full h-[380px] object-cover rounded-xl"
           />
 
-          {/* Thumbnails */}
+    
         {/* Thumbnails */}
 <div className="flex flex-col items-center mt-4">
  <div className="flex gap-3 overflow-x-auto pb-2 pl-2 pr-2 scroll-smooth">
@@ -132,7 +132,7 @@ const ProductDetail: React.FC<Props> = ({ onAdd }) => {
             </span>
             <button
               onClick={() => onAdd(product)}
-              className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-red-600 transition"
+              className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-red-600 transition"
             >
               <ShoppingCart size={20} />
               Add to Cart
