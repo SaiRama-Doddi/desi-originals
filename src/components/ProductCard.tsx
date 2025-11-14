@@ -43,13 +43,13 @@ const ProductCard: React.FC<Props> = ({ product, onView, onAdd }) => {
           <div className="flex gap-2">
             <button
               onClick={() => onView(product)}
-              className="text-sm px-3 py-1.5 border border-[#814142] text-[#814142] rounded-lg hover:bg-[#814142] hover:text-[#fbebd5] transition"
+              className="cursor-pointer text-sm px-3 py-1.5 border border-[#814142] text-[#814142] rounded-lg hover:bg-[#814142] hover:text-[#fbebd5] transition"
             >
               View
             </button>
             <button
               onClick={() => onAdd(product)}
-              className="text-sm px-3 py-1.5 bg-[#901f3b] text-[#fbebd5] rounded-lg hover:bg-[#814142] transition"
+              className="cursor-pointer text-sm px-3 py-1.5 bg-[#901f3b] text-[#fbebd5] rounded-lg hover:bg-[#814142] transition"
             >
               Add
             </button>
