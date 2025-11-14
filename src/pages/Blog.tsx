@@ -17,7 +17,7 @@ const items: Item[] = [
     description:
       "Our Naatu Kodi is raised in a natural environment, ensuring tender and flavorful meat, perfect for traditional recipes.",
     pricePrimary: "₹699/kg",
-    imageSrc: "/1.png",
+    imageSrc: "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133670/natukodi4_ctlwnf.jpg",
   },
   {
     id: "desi-broiler",
@@ -45,7 +45,7 @@ const items: Item[] = [
       "Our Desi Brown Eggs come from hens raised on a nutritious diet, providing fresh and flavorful eggs perfect for any meal.",
     pricePrimary: "₹360/30 Piece",
     priceSecondary: "₹199/12 Piece",
-    imageSrc: "/4.png",
+    imageSrc: "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133744/egg_kdmzm5.jpg",
   },
 ];
 

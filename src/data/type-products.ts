@@ -34,9 +34,9 @@ export const PRODUCTS: Product[] = [
       "Bulk pack of 30 desi brown eggs — perfect for families, bakeries, or meal prep lovers.",
     highlights: ["High protein", "Farm fresh", "Rich yellow yolks"],
     images: [
-      "https://www.jayabhushanagroindustries.com/wp-content/uploads/2024/01/30_eggs.jpg",
-      "https://tse3.mm.bing.net/th/id/OIP.PCrjbtQheV43KjGRpywaUQHaFj?pid=Api&P=0&h=180",
-      "https://tse4.mm.bing.net/th/id/OIP.ZVuuqnrC7sMsXQo3q3GjRAHaHa?pid=Api&P=0&h=180",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/egg-30_pfl3r6.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/egg-302_me6sse.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132589/egg-30.3_qbbote.jpg",
 
     ],
   },
@@ -49,9 +49,9 @@ export const PRODUCTS: Product[] = [
       "Tender, flavorful desi mutton sourced from free-range goats — ideal for curries, gravies, and biryanis.",
     highlights: ["Freshly cut", "No preservatives", "Locally sourced"],
     images: [
-      "https://crispynest.com/wp-content/uploads/2025/03/Mutton_Soup_Bones-1-1.jpg",
-      "https://www.thespruceeats.com/thmb/MHeFc2YtrXB-INB4I-LrNwC4fbs=/3008x2000/filters:no_upscale():max_bytes(150000):strip_icc()/JMTalbott-466838246c734494b30bcf47b633e116.jpg",
-      "https://mls.om/cdn/shop/products/fresh-indian-mutton-indian-mutton-bone-in-cubes-box-5kg-indian-mutton-bone-in-cubes-box-5kg-online-in-oman-29948910927981_1024x1024.jpg?v=1679400993"
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/mutton1_q8vtrx.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133246/mutton3_mn1g3y.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/mutton2_rkvcvd.jpg"
     ],
   },
   {
@@ -63,9 +63,9 @@ export const PRODUCTS: Product[] = [
       "Premium boneless mutton — hand-trimmed cuts for easy cooking and exceptional tenderness.",
     highlights: ["Boneless", "Grass-fed", "Perfect for grills and curries"],
     images: [
-      "https://udaipurmeathouse.com/wp-content/uploads/2022/02/boneless-mutton-102.jpg",
-      "https://thekukkad.com/wp-content/uploads/2025/02/mutton-boneless-halal786.in_.jpg",
-      "https://tse3.mm.bing.net/th/id/OIP.4UFx3U1lUkPZbQNix9ygKQHaFj?pid=Api&P=0&h=180"
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132589/mutton-boneless1_itp5rq.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132589/mutton-boneless2_xekmtv.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132588/mutton-boneless3_dfw9xw.jpg"
     ],
   },
   {
@@ -77,9 +77,9 @@ export const PRODUCTS: Product[] = [
       "Authentic Naatu Kodi raised naturally in village farms — flavorful and rich in texture, perfect for traditional recipes.",
     highlights: ["Free-range", "No hormones", "Natural feed"],
     images: [
-      "https://5.imimg.com/data5/ANDROID/Default/2022/7/GF/YH/IA/133346180/product-jpeg-500x500.jpg",
-      "https://lenaturelmeat.com/cdn/shop/files/DSC00229.jpg?v=1686733246&width=1445",
-      "https://i.ytimg.com/vi/ai5qcxv08gg/maxresdefault.jpg"
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132590/natukodi3_bq5fr7.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132590/natukodi1_mxqynk.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132589/natukodi2_sbooyn.jpg"
     ],
   },
   {
@@ -105,9 +105,9 @@ export const PRODUCTS: Product[] = [
       "Clean, boneless Desi Broiler Chicken — perfect for roasts, stir-fries, and health-conscious recipes.",
     highlights: ["Boneless", "High protein", "Tender texture"],
     images: [
-      "https://yummycuts.in/wp-content/uploads/2023/12/Blue-Minimalist-Electronic-Amazone-Product-Image-7.png",
-      "https://i.chaldn.com/_mpimage/broiler-chicken-breast-boneless-50-gm-1-kg?src=https:%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D74660&q=best&v=1&m=1600",
-      "https://admin.freshtoday.com.bd/media/64f31e901722d.jpeg"
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763132590/chicken-boneless3_vlsebq.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133374/chicken-boneless2_fslpsh.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133442/chicken-boneless4_howquq.jpg"
     ],
   },
 ];
