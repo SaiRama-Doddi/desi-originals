@@ -50,7 +50,17 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage onAdd={addToCart} />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/product/:id" element={<ProductDetail onAdd={addToCart} />} />
+            <Route
+  path="/product/:id"
+  element={
+    <ProductDetail
+      onAdd={addToCart}
+      onRemove={removeFromCart}
+      cartItems={cart}   // send cart items
+    />
+  }
+/>
+
             <Route path="/contact" element={<Contact/>} />
           </Routes>
         </main>

@@ -3,12 +3,16 @@ import { useParams, Link } from "react-router-dom";
 import { PRODUCTS } from "../data/type-products";
 import type { Product } from "../data/type-products";
 import { ShoppingCart } from "lucide-react";
+import type { CartItem } from "../types/cart";
 
 type Props = {
   onAdd: (p: Product) => void;
+  onRemove: (id: string) => void;
+  cartItems: CartItem[];
 };
 
-const ProductDetail: React.FC<Props> = ({ onAdd }) => {
+
+const ProductDetail: React.FC<Props> = ({ onAdd ,onRemove,cartItems}) => {
   const { id } = useParams<{ id: string }>();
   const product = PRODUCTS.find((p) => p.id === id);
   const [idx, setIdx] = useState(0);
@@ -20,6 +24,8 @@ const ProductDetail: React.FC<Props> = ({ onAdd }) => {
       </div>
     );
   }
+const inCart = cartItems?.some(item => item.product.id === product?.id) ?? false;
+
 
   return (
     <div className="bg-[#fbebd5] min-h-screen py-12 px-4">
@@ -126,18 +132,31 @@ const ProductDetail: React.FC<Props> = ({ onAdd }) => {
           </div>
 
           {/* Price + Add to Cart */}
-          <div className="mt-6 flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-800">
-              ₹{product.price}
-            </span>
-            <button
-              onClick={() => onAdd(product)}
-              className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-red-600 transition"
-            >
-              <ShoppingCart size={20} />
-              Add to Cart
-            </button>
-          </div>
+         <div className="mt-6 flex items-center justify-between">
+  <span className="text-3xl font-bold text-gray-800">
+    ₹{product.price}
+  </span>
+  
+
+  {inCart ? (
+    <button
+      onClick={() => onRemove(product.id)}
+      className="cursor-pointer flex items-center gap-2 bg-gray-200 text-gray-800 px-6 py-3 rounded-xl hover:bg-gray-300 transition"
+    >
+      <ShoppingCart size={20} />
+      Remove from Cart
+    </button>
+  ) : (
+    <button
+      onClick={() => onAdd(product)}
+      className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-red-600 transition"
+    >
+      <ShoppingCart size={20} />
+      Add to Cart
+    </button>
+  )}
+</div>
+
         </div>
       </div>
     </div>
