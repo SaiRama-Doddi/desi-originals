@@ -60,7 +60,7 @@ export default function Footer() {
               <a href="#" className="bg-gray-700 hover:bg-orange-600 p-2 rounded-full transition-all duration-200 hover:scale-110">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-gray-700 hover:bg-orange-600 p-2 rounded-full transition-all duration-200 hover:scale-110">
+              <a href="https://www.instagram.com/desioriginals?igsh=YWtxMmp0MHBrNmpz" className="bg-gray-700 hover:bg-orange-600 p-2 rounded-full transition-all duration-200 hover:scale-110">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="bg-gray-700 hover:bg-orange-600 p-2 rounded-full transition-all duration-200 hover:scale-110">
