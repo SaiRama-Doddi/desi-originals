@@ -19,15 +19,45 @@ const Contact: React.FC = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState<{ email?: string; phone?: string }>({});
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const validateEmail = (email: string) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email) ? "" : "Invalid email address";
+};
+
+const validatePhone = (phone: string) => {
+  const regex = /^[0-9]{10}$/; // 10-digit number
+  return regex.test(phone) ? "" : "Phone must be 10 digits";
+};
+
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  const { name, value } = e.target;
+  setFormData({ ...formData, [name]: value });
+
+  if (name === "email") {
+    setErrors({ ...errors, email: validateEmail(value) });
+  }
+  if (name === "phone") {
+    setErrors({ ...errors, phone: validatePhone(value) });
+  }
+};
+
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+     const emailError = validateEmail(formData.email);
+  const phoneError = formData.phone ? validatePhone(formData.phone) : "";
+
+  setErrors({ email: emailError, phone: phoneError });
+
+  if (emailError || phoneError) {
+    return; // Stop submission
+  }
     setSubmitting(true);
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
@@ -93,7 +123,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Google Map iframe */}
-          <div className="overflow-hidden rounded-xl shadow-md">
+        {/*   <div className="overflow-hidden rounded-xl shadow-md">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789!2d78.456789!3d17.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb1234567890%3A0xabcdef123456789!2sYenakapalli%2C%20Ranga%20Reddy%2C%20Telangana%20501504!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
@@ -103,7 +133,7 @@ const Contact: React.FC = () => {
               loading="lazy"
               title="Location Map"
             ></iframe>
-          </div>
+          </div> */}
         </div>
 
         {/* Contact Form */}
@@ -129,6 +159,9 @@ const Contact: React.FC = () => {
             className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-300 focus:outline-none transition"
             required
           />
+          {errors.email && (
+  <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+)}
           <input
             type="tel"
             name="phone"
@@ -137,6 +170,10 @@ const Contact: React.FC = () => {
             onChange={handleChange}
             className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-300 focus:outline-none transition"
           />
+
+          {errors.phone && (
+  <p className="text-red-600 text-sm mt-1">{errors.phone}</p>
+)}
           <textarea
             name="message"
             placeholder="Your Message"
