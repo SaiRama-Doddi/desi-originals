@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ShoppingCart, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   cartCount: number;
@@ -10,12 +11,14 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
 
-  const links = [
-    { name: "Home", href: "#home" },
-    { name: "Products", href: "#products" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
-  ];
+const links = [
+  { name: "Home", href: "/" },
+  { name: "Products", href: "/#products" }, // optional if sections on homepage
+  { name: "Blog", href: "/blog" },
+  {name: "About Us", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
+
 
   const handleLinkClick = (name: string) => {
     setActiveLink(name);
@@ -44,9 +47,9 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => handleLinkClick(link.name)}
               className={`text-lg font-medium ${
                 activeLink === link.name
@@ -55,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
               }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
 
           {/* CART BUTTON */}
@@ -102,16 +105,16 @@ const Header: React.FC<HeaderProps> = ({ cartCount, onCartClick }) => {
       {menuOpen && (
         <div className="md:hidden bg-white text-black px-4 py-3 space-y-3 shadow-inner">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => handleLinkClick(link.name)}
               className={`block text-lg font-medium ${
                 activeLink === link.name ? "text-[#c92a55] font-semibold" : ""
               }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

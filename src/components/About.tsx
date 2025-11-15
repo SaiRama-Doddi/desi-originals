@@ -2,7 +2,7 @@ import { Award, Users, Target, Heart } from "lucide-react";
 
 export function About() {
   return (
-    <div className="min-h-screen bg-[#fbebd5] py-16">
+    <div className="min-h-screen bg-[#fbebd5] py-16" id="about">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-20">

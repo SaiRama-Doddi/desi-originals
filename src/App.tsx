@@ -10,6 +10,8 @@ import { type Product } from "./data/type-products";
 import type { CartItem } from "./types/cart";
 import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./components/Contact";
+import ScrollToHash from "./components/ScrollToHash";
+import { About } from "./components/About";
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -40,6 +42,7 @@ const App: React.FC = () => {
   return (
     <Router>
         <ScrollToTop /> 
+        <ScrollToHash/>
       <div className="min-h-screen flex flex-col">
         <Header
           cartCount={cart.reduce((s, i) => s + i.qty, 0)}
@@ -60,6 +63,8 @@ const App: React.FC = () => {
     />
   }
 />
+     
+     <Route path="/about" element={<About/>} />
 
             <Route path="/contact" element={<Contact/>} />
           </Routes>
