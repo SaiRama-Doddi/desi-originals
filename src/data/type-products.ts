@@ -20,9 +20,9 @@ export const PRODUCTS: Product[] = [
       "Farm-fresh desi brown eggs from free-range hens — naturally nutritious and full of flavor.",
     highlights: ["Free-range hens", "No antibiotics", "Locally sourced"],
     images: [
-      "https://sekulum.no/wp-content/uploads/2021/01/AdobeStock_331283773-1024x1024.jpeg",
-      "https://tse3.mm.bing.net/th/id/OIP.BG3qqKMZF4HaPF9NEsVEpwHaFm?pid=Api&P=0&h=180",
-      "https://tse3.mm.bing.net/th/id/OIP.MzFmwwO9qF5Q6l3hxL7U0gHaEw?pid=Api&P=0&h=180",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763202709/egg-12.1_tgqvp0.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763202710/egg-12.2_psoefx.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763202709/egg-12_jarlpg.jpg",
     ],
   },
   {

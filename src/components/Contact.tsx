@@ -1,5 +1,6 @@
 import React, { useState, type FormEvent } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 type FormData = {
   name: string;
@@ -19,7 +20,9 @@ const Contact: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -27,9 +30,19 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setSubmitting(true);
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!;
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message,
+    };
+
     try {
-      // Simulate API / EmailJS call
-      await new Promise((res) => setTimeout(res, 1500));
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSuccess(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
@@ -43,18 +56,15 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#fbebd5] flex flex-col items-center py-10 px-4 mt-4" id="contact">
-
-
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-5 text-center">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-[#901f3b] mb-5 text-center">
         Get in Touch
       </h1>
-      {/* Decorative divider */}
-<div className="flex justify-center mb-12">
-  <div className="w-44 h-1 bg-[#814142] rounded-full"></div>
-</div>
+      <div className="flex justify-center mb-12">
+        <div className="w-44 h-1 bg-[#814142] rounded-full"></div>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl w-full">
-        {/* Contact Info */}
+        {/* Contact Info + Map */}
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition">
             <Mail className="text-orange-500" size={28} />
@@ -76,8 +86,23 @@ const Contact: React.FC = () => {
             <MapPin className="text-orange-500" size={28} />
             <div>
               <p className="font-semibold text-gray-700">Address</p>
-              <p className="text-gray-500">Yenakapalli, Ranga Reddy, Telangana 501504</p>
+              <p className="text-gray-500">
+                Yenakapalli, Ranga Reddy, Telangana 501504
+              </p>
             </div>
+          </div>
+
+          {/* Google Map iframe */}
+          <div className="overflow-hidden rounded-xl shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789!2d78.456789!3d17.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb1234567890%3A0xabcdef123456789!2sYenakapalli%2C%20Ranga%20Reddy%2C%20Telangana%20501504!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              className="border-0"
+              allowFullScreen
+              loading="lazy"
+              title="Location Map"
+            ></iframe>
           </div>
         </div>
 

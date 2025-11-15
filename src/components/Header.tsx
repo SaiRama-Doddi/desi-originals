@@ -26,7 +26,7 @@ const links = [
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#601c32] via-[#8a1f44] to-[#c92a55] text-white shadow-md">
+    <header className="sticky top-0 z-50 bg-linear-to-r from-[#601c32] via-[#8a1f44] to-[#c92a55] text-white shadow-md">
       
       {/* TOP HEADER BAR */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 h-20 flex justify-between items-center">
