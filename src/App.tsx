@@ -12,6 +12,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./components/Contact";
 import ScrollToHash from "./components/ScrollToHash";
 import { About } from "./components/About";
+import { ShoppingCart } from "lucide-react";
+
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -80,6 +82,23 @@ const App: React.FC = () => {
             onRemove={removeFromCart}
           />
         )}
+
+
+        {cart.length > 0 && (
+  <button
+    onClick={() => setIsCartOpen(true)}
+    className="fixed bottom-5 right-5 bg-gradient-to-r from-[#8a1f44] to-[#c92a55] 
+               text-white w-14 h-14 rounded-full shadow-lg flex items-center 
+               justify-center text-2xl font-bold z-50 animate-bounce-slow"
+  >
+     <ShoppingCart className="w-7 h-7" />
+    <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs 
+                     w-5 h-5 flex items-center justify-center rounded-full font-bold">
+      {cart.reduce((s, i) => s + i.qty, 0)}
+    </span>
+  </button>
+)}
+
       </div>
     </Router>
   );

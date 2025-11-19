@@ -10,3 +10,17 @@ html, body, #root { height: 100%; }
 html {
   scroll-padding-top: 80px; /* or match your header height */
 }
+
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
