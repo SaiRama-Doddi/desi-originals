@@ -20,9 +20,9 @@ export function About() {
             {
               title: "Our Story",
               text1:
-                "Desi Originals was born from a simple belief that everyone deserves access to fresh, high-quality food. What began with a small network of local farms has grown into a trusted name for premium eggs, meat, and seafood.",
+                "Desi Originals was born from a simple idea—bringing the true taste of tradition back to modern homes. We started with a passion for authentic, desi flavors and the desire to keep our cultural roots alive through food made the right way.",
               text2:
-                "Today, we proudly work with dozens of partner farms and fisheries, ensuring each product meets strict quality, freshness, and sustainability standards."
+                "At Desi Originals, we celebrate the taste of our heritage and deliver it fresh to your table, just the way it was meant to be."
             },
             {
               title: "Our Mission",
