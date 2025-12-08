@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
       "Freshly sourced Desi Broiler Chicken — tender meat with balanced flavor, ideal for everyday dishes.",
     highlights: ["Juicy cuts", "Farm fresh", "Cleaned and packed"],
     images: [
-      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134505/broiler-1_g1hwmn.jpg",
+      "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763133374/chicken-boneless2_fslpsh.jpg",
       "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134505/broiler-2_xstwud.jpg",
       "https://res.cloudinary.com/ddzvprhdw/image/upload/v1763134506/broiler-3_wej6sf.jpg"
     ],
